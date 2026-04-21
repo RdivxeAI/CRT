@@ -1,0 +1,82 @@
+{
+  "version": 4,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 23,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/build/${presetName}"
+    },
+    {
+      "name": "windows-msvc-release",
+      "inherits": "base",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "cacheVariables": {
+        "CMAKE_PREFIX_PATH": "$env{QT6_ROOT}",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/dist/install/windows"
+      }
+    },
+    {
+      "name": "linux-ninja-release",
+      "inherits": "base",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_PREFIX_PATH": "$env{QT6_ROOT}",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/dist/install/linux"
+      }
+    },
+    {
+      "name": "macos-ninja-release",
+      "inherits": "base",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_PREFIX_PATH": "$env{QT6_ROOT}",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/dist/install/macos"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "windows-msvc-release-build",
+      "configurePreset": "windows-msvc-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "windows-msvc-release-package",
+      "configurePreset": "windows-msvc-release",
+      "configuration": "Release",
+      "targets": [
+        "package"
+      ]
+    },
+    {
+      "name": "linux-ninja-release-build",
+      "configurePreset": "linux-ninja-release"
+    },
+    {
+      "name": "linux-ninja-release-package",
+      "configurePreset": "linux-ninja-release",
+      "targets": [
+        "package"
+      ]
+    },
+    {
+      "name": "macos-ninja-release-build",
+      "configurePreset": "macos-ninja-release"
+    },
+    {
+      "name": "macos-ninja-release-package",
+      "configurePreset": "macos-ninja-release",
+      "targets": [
+        "package"
+      ]
+    }
+  ]
+}

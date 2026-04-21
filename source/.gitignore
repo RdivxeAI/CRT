@@ -1,0 +1,7 @@
+build/
+dist/
+.vs/
+*.user
+*.suo
+*.log
+packaging/windows/OneFileLauncher.generated.cs

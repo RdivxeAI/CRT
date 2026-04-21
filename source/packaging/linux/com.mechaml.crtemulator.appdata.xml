@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.mechaml.crtemulator</id>
+  <name>CRT_EMULATOR</name>
+  <summary>CRT physics emulator</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <developer id="com.mechaml">
+    <name>MechaML Researchers</name>
+  </developer>
+  <description>
+    <p>Interactive CRT physics emulator built with Qt.</p>
+  </description>
+  <launchable type="desktop-id">com.mechaml.crtemulator.desktop</launchable>
+  <provides>
+    <binary>CRT_EMULATOR</binary>
+  </provides>
+  <content_rating type="oars-1.1" />
+</component>

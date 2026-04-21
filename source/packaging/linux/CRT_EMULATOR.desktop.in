@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=@CRT_APP_DISPLAY_NAME@
+Comment=@CRT_APP_DESCRIPTION@
+Exec=CRT_EMULATOR
+Icon=@CRT_APP_ID@
+Terminal=false
+Categories=Education;Science;Graphics;
+StartupNotify=true
